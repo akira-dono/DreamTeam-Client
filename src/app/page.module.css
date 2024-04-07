@@ -1,0 +1,24 @@
+
+import React from 'react';
+
+const TableWords = () => {
+    return (
+        <div>
+        <input type="text" placeholder="Поиск" />
+        <input type="text" placeholder="Добавление регулярного выражения" />
+        <table>
+            <thead>
+            <tr>
+                <th>Регулярные Выражения</th>
+                <th>Дата и Время</th>
+            </tr>
+            </thead>
+            <tbody>
+            {/* Здесь можете добавить строки для данных */}
+            </tbody>
+        </table>
+        </div>
+    );
+};
+
+export default TableWords;
