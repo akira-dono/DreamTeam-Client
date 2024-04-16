@@ -2,8 +2,7 @@
 import { Grid, TextField, Button } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
-import * as React from "react"
-
+import * as React from "react";
 
 const SearchBar = () => {
     const [url, setUrl] = React.useState("");
@@ -23,7 +22,8 @@ const SearchBar = () => {
             headers: { "Content-Type": "application/json" },
         })
         const content = await res.json()
-        window.location.href = `http://localhost:8000/results?content=${encodeURIComponent(JSON.stringify(content))}`
+        sessionStorage.setItem("content", JSON.stringify(content));
+        router.push("/redirected")
     }
     const handleUrl = async (event: any) => {
         setUrl(event.target.value);
